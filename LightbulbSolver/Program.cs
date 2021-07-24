@@ -9,10 +9,20 @@ namespace LightbulbSolver
     {
         static void Main(string[] args)
         {
+            List<int[,]> switches;
+            int[,] initialState;
+            try
+            {
+                switches = readSwitchesFromFile(@"./InputFiles/Switches.txt");
 
-            List<int[,]> switches = readSwitchesFromFile(@"./InputFiles/Switches.txt");
-
-            var initialState = readInitialStateFromFile(@"./InputFiles/InitialState.txt");
+                initialState = readInitialStateFromFile(@"./InputFiles/InitialState.txt");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error while reading from input files, application will exit now.");
+                return;
+            }
+            
 
             if (initialState.Length == 0 || switches.Count == 0)
             {
