@@ -20,6 +20,7 @@ namespace LightbulbSolver
             catch (Exception)
             {
                 Console.WriteLine("Error while reading from input files, application will exit now.");
+                Console.Read();
                 return;
             }
             
@@ -27,6 +28,7 @@ namespace LightbulbSolver
             if (initialState.Length == 0 || switches.Count == 0)
             {
                 Console.WriteLine("You need to provide both initial state and different switches in the txt files that are located in InputFiles folder.");
+                Console.Read();
                 return;
             }
 
@@ -46,7 +48,7 @@ namespace LightbulbSolver
                     break;
                 }
             }
-
+            Console.Read();
         }
         public static IEnumerable<T[]> Combinations<T>(IEnumerable<T> source)
         {
